@@ -1,1 +1,2 @@
 Strength: 5
+Smidighet: 26
