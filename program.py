@@ -19,6 +19,35 @@ def strenght_function():
 
     f.close()
 
+def smidighet_function():
+
+    f = open("stats.txt", "rt") #öppnar rpgame och läser det i den
+
+    smidighet = "Smidighet:" #vad den letar efter
+
+    for line in f:
+
+        if smidighet in line: #ifall den hittar det den letar efter
+
+            print(line[11:13]) #skriver ut en del av det skrivet i filen bara
+
+    f.close()
+
+def smidighetcheck_function():
+    
+    färdigheter = input("Type Smidighet if you want the value:") #frågar vad vi vill veta
+
+    error = "Not right value given." #error som vissas ifall fel värde är inskriven
+
+    food = ["1"]
+
+    for raw_input in food:
+        if färdigheter == "Smidighet":
+            smidighet_function()
+        else:
+            print(error)
+
+
 def dice20_function():
 
     print(random.randint(1, 20)) #tärning mellan 1-20
@@ -29,8 +58,8 @@ def dice6_function():
 
 def startfunction():
     
-    typen = input("Say 'dice6, dice20, strenght:")
-    error = "error"
+    typen = input("Say 'dice6, dice20, strenght, smidighet:")
+    error = "Not right value given."
     food = ["1"]
 
     for raw_input in food:
@@ -40,6 +69,8 @@ def startfunction():
             dice6_function()
         elif typen == "strenght":
             strenght_function()
+        elif typen == "smidighet":
+            smidighetcheck_function()
         else:
             print(error) #error meddelande
             
